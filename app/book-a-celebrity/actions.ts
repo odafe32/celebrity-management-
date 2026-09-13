@@ -56,14 +56,16 @@ export async function submitBooking(input: BookingInput): Promise<SubmitBookingR
   try {
     // 1. Upsert Customer (identified by email, no login)
     dbLogger.debug({ email }, "Upserting Customer for booking");
-    const customer = await db.orm.public.Customer.select("id").upsert({
+    const customer = await db.customer.upsert({
+      where: { email },
       create: { name, email, phone },
       update: {},
     });
 
     // 2. Upsert Educator row
     dbLogger.debug({ slug: celeb.slug }, "Upserting Educator for booking");
-    const educator = await db.orm.public.Educator.select("id").upsert({
+    const educator = await db.educator.upsert({
+      where: { slug: celeb.slug },
       create: {
         name: celeb.name,
         slug: celeb.slug,
@@ -81,16 +83,18 @@ export async function submitBooking(input: BookingInput): Promise<SubmitBookingR
 
     // 3. Create Lead
     dbLogger.debug({ customerId: customer.id, educatorId: educator.id }, "Creating Lead");
-    const lead = await db.orm.public.Lead.create({
-      educatorId: educator.id,
-      customerId: customer.id,
-      eventDate: date,
-      eventTime: time,
-      numPersons: parseInt(persons, 10) || 1,
-      budget: budget || null,
-      eventLocation: location || null,
-      specialRequests: requests || null,
-      stage: "new" as const,
+    const lead = await db.lead.create({
+      data: {
+        educatorId: educator.id,
+        customerId: customer.id,
+        eventDate: date,
+        eventTime: time,
+        numPersons: parseInt(persons, 10) || 1,
+        budget: budget || null,
+        eventLocation: location || null,
+        specialRequests: requests || null,
+        stage: "new",
+      },
     });
 
     refNumber = `ASH-${lead.id.toString(36).toUpperCase().padStart(6, "0")}`;

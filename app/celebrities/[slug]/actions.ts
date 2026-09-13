@@ -52,7 +52,8 @@ export async function submitComment(input: CommentInput): Promise<SubmitCommentR
 
   try {
     dbLogger.debug({ slug: celeb.slug }, "Upserting Educator row");
-    const educator = await db.orm.public.Educator.select("id").upsert({
+    const educator = await db.educator.upsert({
+      where: { slug: celeb.slug },
       create: {
         name: celeb.name,
         slug: celeb.slug,
@@ -69,13 +70,15 @@ export async function submitComment(input: CommentInput): Promise<SubmitCommentR
     });
 
     dbLogger.debug({ educatorId: educator.id }, "Creating pending Comment");
-    await db.orm.public.Comment.create({
-      educatorId: educator.id,
-      authorName,
-      authorEmail,
-      authorWebsite: authorWebsite || null,
-      body,
-      status: "pending",
+    await db.comment.create({
+      data: {
+        educatorId: educator.id,
+        authorName,
+        authorEmail,
+        authorWebsite: authorWebsite || null,
+        body,
+        status: "pending",
+      },
     });
 
     actionsLogger.info({ educatorId: educator.id, celebritySlug }, "Comment submitted successfully (pending review)");
@@ -107,20 +110,19 @@ export async function getApprovedComments(celebritySlug: string): Promise<Approv
     return [];
   }
 
-  const educatorRow = await db.orm.public.Educator.select("id")
-    .where((e) => e.slug.eq(celeb.slug))
-    .first();
+  const educatorRow = await db.educator.findFirst({
+    where: { slug: celeb.slug },
+  });
 
   if (!educatorRow) {
     actionsLogger.debug({ celebritySlug }, "No Educator row found (no comments yet)");
     return [];
   }
 
-  const comments = await db.orm.public.Comment.select("id", "authorName", "authorWebsite", "body", "createdAt")
-    .where((c) => c.educatorId.eq(educatorRow.id))
-    .where((c) => c.status.eq("approved"))
-    .orderBy((c) => c.createdAt.desc())
-    .all();
+  const comments = await db.comment.findMany({
+    where: { educatorId: educatorRow.id, status: "approved" },
+    orderBy: { createdAt: "desc" },
+  });
 
   actionsLogger.info({ celebritySlug, count: comments.length }, "Approved comments fetched");
   return comments.map((c) => ({
