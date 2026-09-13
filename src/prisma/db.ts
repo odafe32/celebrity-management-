@@ -1,14 +1,11 @@
 import 'dotenv/config';
-import postgres from '@prisma/orm-postgres/runtime';
-import type { Contract } from './contract.d';
-import contractJson from './contract.json' with { type: 'json' };
+import { PrismaPg } from '@prisma/adapter-pg';
+import { PrismaClient } from '../../generated/prisma/client';
 import { dbLogger } from '@/lib/logger';
 
 dbLogger.info({ hasUrl: !!process.env['DATABASE_URL'] }, "Initializing database connection");
 
-export const db = postgres<Contract>({
-  contractJson,
-  url: process.env['DATABASE_URL']!,
-});
+const adapter = new PrismaPg({ connectionString: process.env['DATABASE_URL']! });
+export const db = new PrismaClient({ adapter });
 
 dbLogger.info("Database connection established");

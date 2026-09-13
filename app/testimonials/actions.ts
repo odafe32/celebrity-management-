@@ -24,10 +24,6 @@ export type ApprovedTestimonial = {
   createdAt: string;
 };
 
-/**
- * Submit a new testimonial. Stored with `status: "pending"` — never shown
- * publicly until an admin approves it.
- */
 export async function submitTestimonial(input: TestimonialInput): Promise<SubmitTestimonialResult> {
   actionsLogger.info({ authorName: input.authorName, rating: input.rating }, "Testimonial submission received");
 
@@ -41,38 +37,40 @@ export async function submitTestimonial(input: TestimonialInput): Promise<Submit
 
   try {
     dbLogger.debug({ email: authorEmail }, "Upserting Customer row");
-    const customer = await db.orm.public.Customer.select("id").upsert({
-      create: {
-        name: authorName,
-        email: authorEmail,
-      },
+    const customer = await db.customer.upsert({
+      where: { email: authorEmail },
+      create: { name: authorName, email: authorEmail },
       update: {},
     });
 
-    let educator = await db.orm.public.Educator.select("id")
-      .where((e) => e.slug.eq("ashencrest-platform"))
-      .first();
+    let educator = await db.educator.findFirst({
+      where: { slug: "ashencrest-platform" },
+    });
 
     if (!educator) {
       dbLogger.debug("Creating platform Educator row");
-      educator = await db.orm.public.Educator.create({
-        name: "Ashencrest Platform",
-        slug: "ashencrest-platform",
-        profession: "Platform",
-        status: "published",
-        featured: false,
-        sortOrder: 0,
-        currency: "USD",
+      educator = await db.educator.create({
+        data: {
+          name: "Ashencrest Platform",
+          slug: "ashencrest-platform",
+          profession: "Platform",
+          status: "published",
+          featured: false,
+          sortOrder: 0,
+          currency: "USD",
+        },
       });
     }
 
     dbLogger.debug({ educatorId: educator.id, customerId: customer.id }, "Creating pending Review");
-    await db.orm.public.Review.create({
-      educatorId: educator.id,
-      customerId: customer.id,
-      rating,
-      body,
-      status: "pending",
+    await db.review.create({
+      data: {
+        educatorId: educator.id,
+        customerId: customer.id,
+        rating,
+        body,
+        status: "pending",
+      },
     });
 
     actionsLogger.info({ educatorId: educator.id, customerId: customer.id, rating }, "Testimonial submitted successfully (pending review)");
@@ -83,41 +81,32 @@ export async function submitTestimonial(input: TestimonialInput): Promise<Submit
   }
 }
 
-/**
- * Fetches only admin-approved testimonials, newest first.
- */
 export async function getApprovedTestimonials(): Promise<ApprovedTestimonial[]> {
   try {
     actionsLogger.debug("Fetching approved testimonials");
 
-    const educator = await db.orm.public.Educator.select("id")
-      .where((e) => e.slug.eq("ashencrest-platform"))
-      .first();
+    const educator = await db.educator.findFirst({
+      where: { slug: "ashencrest-platform" },
+    });
 
     if (!educator) {
       actionsLogger.debug("No platform Educator row found (no testimonials yet)");
       return [];
     }
 
-    const reviews = await db.orm.public.Review.select("id", "rating", "body", "createdAt", "customerId")
-      .where((r) => r.educatorId.eq(educator.id))
-      .where((r) => r.status.eq("approved"))
-      .orderBy((r) => r.createdAt.desc())
-      .all();
+    const reviews = await db.review.findMany({
+      where: { educatorId: educator.id, status: "approved" },
+      orderBy: { createdAt: "desc" },
+      include: { customer: { select: { name: true } } },
+    });
 
-    const result: ApprovedTestimonial[] = [];
-    for (const review of reviews) {
-      const customer = await db.orm.public.Customer.select("name")
-        .where((c) => c.id.eq(review.customerId))
-        .first();
-      result.push({
-        id: review.id,
-        authorName: customer?.name ?? "Verified Client",
-        body: review.body ?? "",
-        rating: review.rating,
-        createdAt: String(review.createdAt),
-      });
-    }
+    const result: ApprovedTestimonial[] = reviews.map((review) => ({
+      id: review.id,
+      authorName: review.customer?.name ?? "Verified Client",
+      body: review.body ?? "",
+      rating: review.rating,
+      createdAt: String(review.createdAt),
+    }));
 
     actionsLogger.info({ count: result.length }, "Approved testimonials fetched");
     return result;

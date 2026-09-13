@@ -563,6 +563,7 @@
             "relations": {
               "user": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "userId"
@@ -660,6 +661,7 @@
             "relations": {
               "educator": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "educatorId"
@@ -798,6 +800,7 @@
             "relations": {
               "customer": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "customerId"
@@ -813,6 +816,7 @@
               },
               "educator": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "educatorId"
@@ -843,6 +847,7 @@
               },
               "lead": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "leadId"
@@ -873,6 +878,7 @@
               },
               "serviceType": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "serviceTypeId"
@@ -1021,6 +1027,7 @@
               },
               "parent": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "parentId"
@@ -1160,6 +1167,7 @@
               },
               "educator": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "educatorId"
@@ -1175,6 +1183,7 @@
               },
               "parent": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "parentId"
@@ -1702,6 +1711,7 @@
             "relations": {
               "category": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "categoryId"
@@ -1717,6 +1727,7 @@
               },
               "educator": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "educatorId"
@@ -1791,6 +1802,7 @@
             "relations": {
               "emailLog": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "emailLogId"
@@ -2156,6 +2168,7 @@
             "relations": {
               "booking": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "bookingId"
@@ -2341,6 +2354,7 @@
             "relations": {
               "assignedAdmin": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "assignedTo"
@@ -2356,6 +2370,7 @@
               },
               "booking": {
                 "cardinality": "1:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "id"
@@ -2371,6 +2386,7 @@
               },
               "customer": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "customerId"
@@ -2386,6 +2402,7 @@
               },
               "educator": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "educatorId"
@@ -2416,6 +2433,7 @@
               },
               "serviceType": {
                 "cardinality": "N:1",
+                "nullable": true,
                 "on": {
                   "localFields": [
                     "serviceTypeId"
@@ -2542,6 +2560,7 @@
             "relations": {
               "lead": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "leadId"
@@ -2629,6 +2648,7 @@
             "relations": {
               "conversation": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "conversationId"
@@ -2843,6 +2863,7 @@
             "relations": {
               "booking": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "bookingId"
@@ -2962,6 +2983,7 @@
             "relations": {
               "customer": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "customerId"
@@ -2977,6 +2999,7 @@
               },
               "educator": {
                 "cardinality": "N:1",
+                "nullable": false,
                 "on": {
                   "localFields": [
                     "educatorId"

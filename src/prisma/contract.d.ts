@@ -22,6 +22,7 @@ import type {
 
 import type {
   ContractWithTypeMaps,
+  RelationKeys,
   TypeMaps as TypeMapsType,
 } from '@prisma/orm-postgres/family-contract/types';
 import type {
@@ -3114,6 +3115,7 @@ type ContractBase = Omit<
                   readonly namespace: 'public' & NamespaceId;
                   readonly model: 'AdminUser';
                 };
+                  readonly nullable: true;
                 readonly cardinality: 'N:1';
                 readonly on: {
                   readonly localFields: readonly ['userId'];
