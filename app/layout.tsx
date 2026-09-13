@@ -128,17 +128,23 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <CookiePreferencesButton />
         </ThemeProvider>
 
-        {/* Smartsupp Live Chat */}
-        <Script id="smartsupp" strategy="afterInteractive">
+        {/* Chatwoot Live Chat */}
+        <Script id="chatwoot" strategy="afterInteractive">
           {`
-            var _smartsupp = _smartsupp || {};
-            _smartsupp.key = '2b397aa71821549518173476c2b251bc04dfef90';
-            window.smartsupp||(function(d) {
-              var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-              s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-              c.type='text/javascript';c.charset='utf-8';c.async=true;
-              c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-            })(document);
+            window.chatwootSettings = {"position":"right","type":"standard","launcherTitle":"Chat with us"};
+            (function(d,t) {
+              var BASE_URL="https://app.chatwoot.com";
+              var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+              g.src=BASE_URL+"/packs/js/sdk.js";
+              g.async = true;
+              s.parentNode.insertBefore(g,s);
+              g.onload=function(){
+                window.chatwootSDK.run({
+                  websiteToken: 'V25kcK3t85DiMkgPmLSAkjPT',
+                  baseUrl: BASE_URL
+                })
+              }
+            })(document,"script");
           `}
         </Script>
       </body>
