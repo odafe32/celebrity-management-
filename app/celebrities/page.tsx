@@ -15,6 +15,14 @@ import { CelebrityRequestForm } from "@/components/celebrity-request-form";
 const PER_PAGE = 12;
 
 export default function CelebritiesPage() {
+  return (
+    <React.Suspense fallback={<div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">Loading…</div>}>
+      <CelebritiesContent />
+    </React.Suspense>
+  );
+}
+
+function CelebritiesContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") ?? "";
   const category = searchParams.get("category") ?? "";

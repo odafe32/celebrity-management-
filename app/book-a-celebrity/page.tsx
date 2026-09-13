@@ -52,6 +52,14 @@ type BookingForm = z.infer<typeof bookingSchema>;
 type FormErrors = Partial<Record<keyof BookingForm, string>>;
 
 export default function BookACelebrityPage() {
+  return (
+    <React.Suspense fallback={<div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">Loading…</div>}>
+      <BookACelebrityContent />
+    </React.Suspense>
+  );
+}
+
+function BookACelebrityContent() {
   const searchParams = useSearchParams();
   const presetService = searchParams.get("service") ?? "";
   const presetCelebrity = searchParams.get("celebrity") ?? "";
