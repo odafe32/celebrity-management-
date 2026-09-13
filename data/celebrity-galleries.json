@@ -1,0 +1,588 @@
+{
+  "tom-cruise": [
+    "/images/celebrities/tom-cruise-gallery-1.jpg",
+    "/images/celebrities/tom-cruise-gallery-3.jpg",
+    "/images/celebrities/tom-cruise-gallery-4.jpg"
+  ],
+  "beyonce": [
+    "/images/celebrities/beyonce-gallery-2.jpg",
+    "/images/celebrities/beyonce-gallery-3.jpg",
+    "/images/celebrities/beyonce-gallery-4.jpg"
+  ],
+  "lebron-james": [
+    "/images/celebrities/lebron-james-gallery-2.jpg",
+    "/images/celebrities/lebron-james-gallery-3.jpg",
+    "/images/celebrities/lebron-james-gallery-4.jpg"
+  ],
+  "brad-pitt": [
+    "/images/celebrities/brad-pitt-gallery-1.jpg",
+    "/images/celebrities/brad-pitt-gallery-2.jpg",
+    "/images/celebrities/brad-pitt-gallery-3.jpg",
+    "/images/celebrities/brad-pitt-gallery-4.jpg"
+  ],
+  "rihanna": [
+    "/images/celebrities/rihanna-gallery-4.jpg",
+    "/images/celebrities/rihanna-gallery-5.jpg",
+    "/images/celebrities/rihanna-gallery-6.jpg",
+    "/images/celebrities/rihanna-gallery-7.jpg",
+    "/images/celebrities/rihanna-gallery-8.jpg",
+    "/images/celebrities/rihanna-gallery-9.jpg",
+    "/images/celebrities/rihanna-gallery-10.jpg"
+  ],
+  "dwayne-johnson": [
+    "/images/celebrities/dwayne-johnson-gallery-1.jpg",
+    "/images/celebrities/dwayne-johnson-gallery-2.jpg",
+    "/images/celebrities/dwayne-johnson-gallery-3.jpg",
+    "/images/celebrities/dwayne-johnson-gallery-4.jpg"
+  ],
+  "taylor-swift": [
+    "/images/celebrities/taylor-swift-gallery-1.png",
+    "/images/celebrities/taylor-swift-gallery-2.jpg",
+    "/images/celebrities/taylor-swift-gallery-3.jpg",
+    "/images/celebrities/taylor-swift-gallery-4.jpg"
+  ],
+  "kevin-hart": [
+    "/images/celebrities/kevin-hart-gallery-1.jpg",
+    "/images/celebrities/kevin-hart-gallery-2.jpg",
+    "/images/celebrities/kevin-hart-gallery-3.jpg",
+    "/images/celebrities/kevin-hart-gallery-4.jpg"
+  ],
+  "drake": [
+    "/images/celebrities/drake-gallery-1.jpg",
+    "/images/celebrities/drake-gallery-3.jpg",
+    "/images/celebrities/drake-gallery-5.jpg",
+    "/images/celebrities/drake-gallery-11.jpg",
+    "/images/celebrities/drake-gallery-13.jpg",
+    "/images/celebrities/drake-gallery-14.jpg"
+  ],
+  "keanu-reeves": [
+    "/images/celebrities/keanu-reeves-gallery-2.jpg",
+    "/images/celebrities/keanu-reeves-gallery-3.jpg",
+    "/images/celebrities/keanu-reeves-gallery-4.jpg"
+  ],
+  "scarlett-johansson": [
+    "/images/celebrities/scarlett-johansson-gallery-1.jpg",
+    "/images/celebrities/scarlett-johansson-gallery-2.jpg",
+    "/images/celebrities/scarlett-johansson-gallery-3.jpg"
+  ],
+  "chris-hemsworth": [
+    "/images/celebrities/chris-hemsworth-gallery-1.jpg",
+    "/images/celebrities/chris-hemsworth-gallery-2.jpg",
+    "/images/celebrities/chris-hemsworth-gallery-3.jpg",
+    "/images/celebrities/chris-hemsworth-gallery-4.jpg"
+  ],
+  "leonardo-dicaprio": [
+    "/images/celebrities/leonardo-dicaprio-gallery-1.jpg",
+    "/images/celebrities/leonardo-dicaprio-gallery-2.jpg",
+    "/images/celebrities/leonardo-dicaprio-gallery-4.jpg",
+    "/images/celebrities/leonardo-dicaprio-gallery-5.jpg",
+    "/images/celebrities/leonardo-dicaprio-gallery-6.jpg"
+  ],
+  "jennifer-lawrence": [
+    "/images/celebrities/jennifer-lawrence-gallery-1.jpg",
+    "/images/celebrities/jennifer-lawrence-gallery-2.jpg",
+    "/images/celebrities/jennifer-lawrence-gallery-3.jpg",
+    "/images/celebrities/jennifer-lawrence-gallery-4.jpg"
+  ],
+  "morgan-freeman": [
+    "/images/celebrities/morgan-freeman-gallery-1.jpg",
+    "/images/celebrities/morgan-freeman-gallery-2.jpg",
+    "/images/celebrities/morgan-freeman-gallery-3.jpg",
+    "/images/celebrities/morgan-freeman-gallery-4.jpg"
+  ],
+  "angelina-jolie": [
+    "/images/celebrities/angelina-jolie-gallery-1.jpg",
+    "/images/celebrities/angelina-jolie-gallery-4.jpg"
+  ],
+  "elon-musk": [
+    "/images/celebrities/elon-musk-gallery-1.png",
+    "/images/celebrities/elon-musk-gallery-4.jpg"
+  ],
+  "oprah-winfrey": [
+    "/images/celebrities/oprah-winfrey-gallery-1.jpg",
+    "/images/celebrities/oprah-winfrey-gallery-3.jpg",
+    "/images/celebrities/oprah-winfrey-gallery-4.jpg"
+  ],
+  "lionel-messi": [
+    "/images/celebrities/lionel-messi-gallery-1.jpg",
+    "/images/celebrities/lionel-messi-gallery-2.jpg",
+    "/images/celebrities/lionel-messi-gallery-3.jpg",
+    "/images/celebrities/lionel-messi-gallery-4.jpg"
+  ],
+  "cristiano-ronaldo": [
+    "/images/celebrities/cristiano-ronaldo-gallery-1.jpg",
+    "/images/celebrities/cristiano-ronaldo-gallery-2.jpg",
+    "/images/celebrities/cristiano-ronaldo-gallery-3.jpg"
+  ],
+  "gordon-ramsay": [
+    "/images/celebrities/gordon-ramsay-gallery-1.jpg",
+    "/images/celebrities/gordon-ramsay-gallery-2.jpg",
+    "/images/celebrities/gordon-ramsay-gallery-3.jpg"
+  ],
+  "dave-chappelle": [
+    "/images/celebrities/dave-chappelle-gallery-2.jpg",
+    "/images/celebrities/dave-chappelle-gallery-3.jpg",
+    "/images/celebrities/dave-chappelle-gallery-4.jpg"
+  ],
+  "margot-robbie": [
+    "/images/celebrities/margot-robbie-gallery-1.jpg",
+    "/images/celebrities/margot-robbie-gallery-2.jpg",
+    "/images/celebrities/margot-robbie-gallery-3.jpg",
+    "/images/celebrities/margot-robbie-gallery-4.jpg"
+  ],
+  "zendaya": [
+    "/images/celebrities/zendaya-gallery-1.jpg",
+    "/images/celebrities/zendaya-gallery-2.jpg",
+    "/images/celebrities/zendaya-gallery-3.jpg",
+    "/images/celebrities/zendaya-gallery-4.jpg"
+  ],
+  "johnny-depp": [
+    "/images/celebrities/johnny-depp-gallery-1.jpg",
+    "/images/celebrities/johnny-depp-gallery-3.jpg"
+  ],
+  "will-smith": [
+    "/images/celebrities/will-smith-gallery-1.jpg",
+    "/images/celebrities/willsmit.jpg"
+  ],
+  "denzel-washington": [
+    "/images/celebrities/denzel-washington-gallery-1.jpg",
+    "/images/celebrities/denzel-washington-gallery-2.jpg",
+    "/images/celebrities/denzel-washington-gallery-3.jpg"
+  ],
+  "robert-de-niro": [
+    "/images/celebrities/robert-de-niro-gallery-1.jpg",
+    "/images/celebrities/robert-de-niro-gallery-2.jpg",
+    "/images/celebrities/robert-de-niro-gallery-3.jpg"
+  ],
+  "samuel-l-jackson": [
+    "/images/celebrities/samuel-l-jackson-gallery-1.jpg",
+    "/images/celebrities/samuel-l-jackson-gallery-2.jpg",
+    "/images/celebrities/samuel-l-jackson-gallery-3.jpg"
+  ],
+  "matt-damon": [
+    "/images/celebrities/matt-damon-gallery-1.jpg",
+    "/images/celebrities/matt-damon-gallery-2.jpg",
+    "/images/celebrities/matt-damon-gallery-3.jpg"
+  ],
+  "christian-bale": [
+    "/images/celebrities/christian-bale-gallery-1.jpg",
+    "/images/celebrities/christian-bale-gallery-2.jpg",
+    "/images/celebrities/christian-bale-gallery-3.jpg"
+  ],
+  "ryan-gosling": [
+    "/images/celebrities/ryan-gosling-gallery-2.jpg",
+    "/images/celebrities/ryan-gosling-gallery-3.jpg"
+  ],
+  "chris-evans": [
+    "/images/celebrities/chris-evans-gallery-1.jpg",
+    "/images/celebrities/chris-evans-gallery-2.jpg",
+    "/images/celebrities/chris-evans-gallery-3.jpg"
+  ],
+  "ryan-reynolds": [
+    "/images/celebrities/ryan-reynolds-gallery-1.jpg",
+    "/images/celebrities/ryan-reynolds-gallery-2.jpg",
+    "/images/celebrities/ryan-reynolds-gallery-3.jpg"
+  ],
+  "jason-statham": [
+    "/images/celebrities/jason-statham-gallery-1.jpg",
+    "/images/celebrities/jason-statham-gallery-2.jpg",
+    "/images/celebrities/jason-statham-gallery-3.jpg"
+  ],
+  "bradley-cooper": [
+    "/images/celebrities/bradley-cooper-gallery-1.jpg",
+    "/images/celebrities/bradley-cooper-gallery-2.jpg"
+  ],
+  "tom-hardy": [
+    "/images/celebrities/tom-hardy-gallery-1.jpg",
+    "/images/celebrities/tom-hardy-gallery-2.jpg",
+    "/images/celebrities/tom-hardy-gallery-3.jpg"
+  ],
+  "idris-elba": [
+    "/images/celebrities/idris-elba-gallery-1.jpg",
+    "/images/celebrities/idris-elba-gallery-2.jpg",
+    "/images/celebrities/idris-elba-gallery-3.jpg"
+  ],
+  "cillian-murphy": [
+    "/images/celebrities/cillian-murphy-gallery-1.jpg",
+    "/images/celebrities/cillian-murphy-gallery-2.jpg",
+    "/images/celebrities/cillian-murphy-gallery-3.jpg"
+  ],
+  "tom-hanks": [
+    "/images/celebrities/tom-hanks-gallery-1.jpg",
+    "/images/celebrities/tom-hanks-gallery-2.jpg",
+    "/images/celebrities/tom-hanks-gallery-3.jpg"
+  ],
+  "george-clooney": [
+    "/images/celebrities/george-clooney-gallery-1.jpg",
+    "/images/celebrities/george-clooney-gallery-2.jpg",
+    "/images/celebrities/george-clooney-gallery-3.jpg"
+  ],
+  "robert-downey-jr": [
+    "/images/celebrities/robert-downey-jr-gallery-1.jpg",
+    "/images/celebrities/robert-downey-jr-gallery-2.jpg",
+    "/images/celebrities/robert-downey-jr-gallery-3.jpg"
+  ],
+  "benedict-cumberbatch": [
+    "/images/celebrities/benedict-cumberbatch-gallery-1.jpg",
+    "/images/celebrities/benedict-cumberbatch-gallery-2.jpg",
+    "/images/celebrities/benedict-cumberbatch-gallery-3.jpg"
+  ],
+  "pedro-pascal": [
+    "/images/celebrities/pedro-pascal-gallery-1.jpg"
+  ],
+  "henry-cavill": [
+    "/images/celebrities/henry-cavill-gallery-1.jpg",
+    "/images/celebrities/henry-cavill-gallery-2.jpg",
+    "/images/celebrities/henry-cavill-gallery-3.jpg"
+  ],
+  "timothee-chalamet": [
+    "/images/celebrities/timothee-chalamet-gallery-1.jpg",
+    "/images/celebrities/timothee-chalamet-gallery-2.jpg",
+    "/images/celebrities/timothee-chalamet-gallery-3.jpg"
+  ],
+  "austin-butler": [
+    "/images/celebrities/austin-butler-gallery-1.jpg",
+    "/images/celebrities/austin-butler-gallery-2.jpg",
+    "/images/celebrities/austin-butler-gallery-3.jpg"
+  ],
+  "meryl-streep": [
+    "/images/celebrities/meryl-streep-gallery-1.jpg",
+    "/images/celebrities/meryl-streep-gallery-2.jpg",
+    "/images/celebrities/meryl-streep-gallery-3.jpg"
+  ],
+  "cate-blanchett": [
+    "/images/celebrities/cate-blanchett-gallery-1.jpg",
+    "/images/celebrities/cate-blanchett-gallery-2.jpg",
+    "/images/celebrities/cate-blanchett-gallery-3.jpg"
+  ],
+  "sandra-bullock": [
+    "/images/celebrities/sandra-bullock-gallery-1.jpg",
+    "/images/celebrities/sandra-bullock-gallery-2.jpg",
+    "/images/celebrities/sandra-bullock-gallery-3.jpg"
+  ],
+  "nicole-kidman": [
+    "/images/celebrities/nicole-kidman-gallery-1.jpg",
+    "/images/celebrities/nicole-kidman-gallery-2.jpg",
+    "/images/celebrities/nicole-kidman-gallery-3.jpg"
+  ],
+  "charlize-theron": [
+    "/images/celebrities/charlize-theron-gallery-1.jpg",
+    "/images/celebrities/charlize-theron-gallery-2.jpg",
+    "/images/celebrities/charlize-theron-gallery-3.jpg"
+  ],
+  "julia-roberts": [
+    "/images/celebrities/julia-roberts-gallery-1.jpg",
+    "/images/celebrities/julia-roberts-gallery-2.jpg",
+    "/images/celebrities/julia-roberts-gallery-3.jpg"
+  ],
+  "anne-hathaway": [
+    "/images/celebrities/anne-hathaway-gallery-2.jpg",
+    "/images/celebrities/anne-hathaway-gallery-3.jpg"
+  ],
+  "natalie-portman": [
+    "/images/celebrities/natalie-portman-gallery-1.jpg",
+    "/images/celebrities/natalie-portman-gallery-2.jpg",
+    "/images/celebrities/natalie-portman-gallery-3.jpg"
+  ],
+  "emma-stone": [
+    "/images/celebrities/emma-stone-gallery-1.jpg",
+    "/images/celebrities/emma-stone-gallery-3.jpg"
+  ],
+  "emma-watson": [
+    "/images/celebrities/emma-watson-gallery-1.jpg",
+    "/images/celebrities/emma-watson-gallery-3.jpg"
+  ],
+  "gal-gadot": [
+    "/images/celebrities/gal-gadot-gallery-1.jpg",
+    "/images/celebrities/gal-gadot-gallery-2.jpg",
+    "/images/celebrities/gal-gadot-gallery-3.jpg"
+  ],
+  "florence-pugh": [
+    "/images/celebrities/florence-pugh-gallery-1.jpg",
+    "/images/celebrities/florence-pugh-gallery-2.jpg",
+    "/images/celebrities/florence-pugh-gallery-3.jpg"
+  ],
+  "anya-taylor-joy": [
+    "/images/celebrities/anya-taylor-joy-gallery-1.jpg",
+    "/images/celebrities/anya-taylor-joy-gallery-2.jpg",
+    "/images/celebrities/anya-taylor-joy-gallery-3.jpg"
+  ],
+  "paul-mccartney": [
+    "/images/celebrities/paul-mccartney-gallery-1.jpg",
+    "/images/celebrities/paul-mccartney-gallery-2.jpg",
+    "/images/celebrities/paul-mccartney-gallery-3.jpg"
+  ],
+  "adele": [
+    "/images/celebrities/adele-gallery-2.jpg",
+    "/images/celebrities/adele-gallery-3.jpg"
+  ],
+  "ed-sheeran": [
+    "/images/celebrities/ed-sheeran-gallery-1.jpg",
+    "/images/celebrities/ed-sheeran-gallery-3.jpg"
+  ],
+  "lady-gaga": [
+    "/images/celebrities/lady-gaga-gallery-1.jpg",
+    "/images/celebrities/lady-gaga-gallery-2.jpg",
+    "/images/celebrities/lady-gaga-gallery-3.jpg"
+  ],
+  "ariana-grande": [
+    "/images/celebrities/ariana-grande-gallery-1.jpg"
+  ],
+  "billie-eilish": [
+    "/images/celebrities/billie-eilish-gallery-1.jpg",
+    "/images/celebrities/billie-eilish-gallery-2.jpg",
+    "/images/celebrities/billie-eilish-gallery-3.jpg"
+  ],
+  "bruno-mars": [
+    "/images/celebrities/bruno-mars-gallery-1.jpg",
+    "/images/celebrities/bruno-mars-gallery-2.jpg",
+    "/images/celebrities/bruno-mars-gallery-3.jpg"
+  ],
+  "the-weeknd": [
+    "/images/celebrities/the-weeknd-gallery-1.jpg",
+    "/images/celebrities/the-weeknd-gallery-2.jpg",
+    "/images/celebrities/the-weeknd-gallery-3.jpg"
+  ],
+  "bad-bunny": [
+    "/images/celebrities/bad-bunny-gallery-1.jpg",
+    "/images/celebrities/bad-bunny-gallery-2.jpg",
+    "/images/celebrities/bad-bunny-gallery-3.jpg"
+  ],
+  "harry-styles": [
+    "/images/celebrities/harry-styles-gallery-1.jpg",
+    "/images/celebrities/harry-styles-gallery-2.jpg",
+    "/images/celebrities/harry-styles-gallery-3.jpg"
+  ],
+  "justin-bieber": [
+    "/images/celebrities/justin-bieber-gallery-1.jpg"
+  ],
+  "eminem": [
+    "/images/celebrities/eminem-gallery-2.jpg",
+    "/images/celebrities/eminem-gallery-3.jpg"
+  ],
+  "snoop-dogg": [],
+  "jay-z": [
+    "/images/celebrities/jay-z-gallery-2.jpg",
+    "/images/celebrities/jay-z-gallery-3.jpg"
+  ],
+  "kendrick-lamar": [
+    "/images/celebrities/kendrick-lamar-gallery-2.jpg",
+    "/images/celebrities/kendrick-lamar-gallery-3.jpg"
+  ],
+  "elton-john": [],
+  "stephen-curry": [
+    "/images/celebrities/stephen-curry-gallery-1.jpg"
+  ],
+  "neymar-jr": [
+    "/images/celebrities/neymar-jr-gallery-1.jpg",
+    "/images/celebrities/neymar-jr-gallery-2.jpg",
+    "/images/celebrities/neymar-jr-gallery-3.jpg"
+  ],
+  "kylian-mbappe": [
+    "/images/celebrities/kylian-mbappe-gallery-1.jpg",
+    "/images/celebrities/kylian-mbappe-gallery-3.jpg"
+  ],
+  "serena-williams": [
+    "/images/celebrities/serena-williams-gallery-1.jpg",
+    "/images/celebrities/serena-williams-gallery-2.jpg",
+    "/images/celebrities/serena-williams-gallery-3.jpg"
+  ],
+  "rafael-nadal": [
+    "/images/celebrities/rafael-nadal-gallery-1.jpg",
+    "/images/celebrities/rafael-nadal-gallery-2.jpg",
+    "/images/celebrities/rafael-nadal-gallery-3.jpg"
+  ],
+  "novak-djokovic": [
+    "/images/celebrities/novak-djokovic-gallery-3.jpg"
+  ],
+  "roger-federer": [
+    "/images/celebrities/roger-federer-gallery-1.jpg",
+    "/images/celebrities/roger-federer-gallery-2.jpg",
+    "/images/celebrities/roger-federer-gallery-3.jpg"
+  ],
+  "conor-mcgregor": [
+    "/images/celebrities/conor-mcgregor-gallery-1.jpg",
+    "/images/celebrities/conor-mcgregor-gallery-2.jpg"
+  ],
+  "lewis-hamilton": [
+    "/images/celebrities/lewis-hamilton-gallery-1.jpg",
+    "/images/celebrities/lewis-hamilton-gallery-2.jpg",
+    "/images/celebrities/lewis-hamilton-gallery-3.jpg"
+  ],
+  "tom-brady": [
+    "/images/celebrities/tom-brady-gallery-1.jpg",
+    "/images/celebrities/tom-brady-gallery-2.jpg",
+    "/images/celebrities/tom-brady-gallery-3.jpg"
+  ],
+  "patrick-mahomes": [
+    "/images/celebrities/patrick-mahomes-gallery-1.jpg",
+    "/images/celebrities/patrick-mahomes-gallery-2.jpg",
+    "/images/celebrities/patrick-mahomes-gallery-3.jpg"
+  ],
+  "shohei-ohtani": [
+    "/images/celebrities/shohei-ohtani-gallery-1.jpg",
+    "/images/celebrities/shohei-ohtani-gallery-2.jpg",
+    "/images/celebrities/shohei-ohtani-gallery-3.jpg"
+  ],
+  "simone-biles": [
+    "/images/celebrities/simone-biles-gallery-1.jpg",
+    "/images/celebrities/simone-biles-gallery-2.jpg",
+    "/images/celebrities/simone-biles-gallery-3.jpg"
+  ],
+  "chris-rock": [
+    "/images/celebrities/chris-rock-gallery-1.jpg",
+    "/images/celebrities/chris-rock-gallery-2.jpg",
+    "/images/celebrities/chris-rock-gallery-3.jpg"
+  ],
+  "jerry-seinfeld": [
+    "/images/celebrities/jerry-seinfeld-gallery-1.jpg",
+    "/images/celebrities/jerry-seinfeld-gallery-2.jpg",
+    "/images/celebrities/jerry-seinfeld-gallery-3.jpg"
+  ],
+  "mark-zuckerberg": [
+    "/images/celebrities/mark-zuckerberg-gallery-1.jpg",
+    "/images/celebrities/mark-zuckerberg-gallery-2.jpg",
+    "/images/celebrities/mark-zuckerberg-gallery-3.jpg"
+  ],
+  "mrbeast": [
+    "/images/celebrities/mrbeast-gallery-2.jpg"
+  ],
+  "steven-spielberg": [
+    "/images/celebrities/steven-spielberg-gallery-1.jpg",
+    "/images/celebrities/steven-spielberg-gallery-2.jpg",
+    "/images/celebrities/steven-spielberg-gallery-3.jpg"
+  ],
+  "christopher-nolan": [
+    "/images/celebrities/christopher-nolan-gallery-1.jpg",
+    "/images/celebrities/christopher-nolan-gallery-2.jpg"
+  ],
+  "quentin-tarantino": [
+    "/images/celebrities/quentin-tarantino-gallery-1.jpg",
+    "/images/celebrities/quentin-tarantino-gallery-2.jpg",
+    "/images/celebrities/quentin-tarantino-gallery-3.jpg"
+  ],
+  "stephen-king": [
+    "/images/celebrities/stephen-king-gallery-1.jpg",
+    "/images/celebrities/stephen-king-gallery-3.jpg"
+  ],
+  "jk-rowling": [
+    "/images/celebrities/jk-rowling-gallery-1.jpg",
+    "/images/celebrities/jk-rowling-gallery-2.jpg",
+    "/images/celebrities/jk-rowling-gallery-3.jpg"
+  ],
+  "sza": [
+    "/images/celebrities/sza-gallery-2.jpg"
+  ],
+  "travis-scott": [
+    "/images/celebrities/travis-scott-gallery-3.jpg"
+  ],
+  "doja-cat": [
+    "/images/celebrities/doja-cat-gallery-1.jpg",
+    "/images/celebrities/doja-cat-gallery-2.jpg",
+    "/images/celebrities/doja-cat-gallery-3.jpg"
+  ],
+  "tyler-the-creator": [
+    "/images/celebrities/tyler-the-creator-gallery-1.jpg",
+    "/images/celebrities/tyler-the-creator-gallery-2.jpg",
+    "/images/celebrities/tyler-the-creator-gallery-3.jpg"
+  ],
+  "morgan-wallen": [
+    "/images/celebrities/morgan-wallen-gallery-1.jpg",
+    "/images/celebrities/morgan-wallen-gallery-2.jpg",
+    "/images/celebrities/morgan-wallen-gallery-3.jpg"
+  ],
+  "zach-bryan": [
+    "/images/celebrities/zach-bryan-gallery-1.jpg",
+    "/images/celebrities/zach-bryan-gallery-2.jpg",
+    "/images/celebrities/zach-bryan-gallery-3.jpg"
+  ],
+  "ice-spice": [
+    "/images/celebrities/ice-spice-gallery-1.jpg",
+    "/images/celebrities/ice-spice-gallery-2.jpg",
+    "/images/celebrities/ice-spice-gallery-3.jpg"
+  ],
+  "jelly-roll": [
+    "/images/celebrities/jelly-roll-gallery-1.jpg"
+  ],
+  "lainey-wilson": [
+    "/images/celebrities/lainey-wilson-gallery-1.jpg",
+    "/images/celebrities/lainey-wilson-gallery-2.jpg"
+  ],
+  "karol-g": [
+    "/images/celebrities/karol-g-gallery-1.jpg"
+  ],
+  "peso-pluma": [
+    "/images/celebrities/peso-pluma-gallery-3.jpg"
+  ],
+  "rema": [
+    "/images/celebrities/rema-gallery-1.jpg"
+  ],
+  "tems": [
+    "/images/celebrities/tems-gallery-1.jpg",
+    "/images/celebrities/tems-gallery-2.jpg",
+    "/images/celebrities/tems-gallery-3.jpg"
+  ],
+  "burna-boy": [
+    "/images/celebrities/burna-boy-gallery-1.jpg",
+    "/images/celebrities/burna-boy-gallery-2.jpg"
+  ],
+  "wizkid": [
+    "/images/celebrities/wizkid-gallery-2.jpg"
+  ],
+  "shakira": [
+    "/images/celebrities/shakira-gallery-1.jpg",
+    "/images/celebrities/shakira-gallery-3.jpg"
+  ],
+  "rosalia": [
+    "/images/celebrities/rosalia-gallery-1.jpg",
+    "/images/celebrities/rosalia-gallery-2.jpg"
+  ],
+  "sydney-sweeney": [
+    "/images/celebrities/sydney-sweeney-gallery-1.jpg",
+    "/images/celebrities/sydney-sweeney-gallery-2.jpg",
+    "/images/celebrities/sydney-sweeney-gallery-3.jpg"
+  ],
+  "glen-powell": [
+    "/images/celebrities/glen-powell-gallery-2.jpg",
+    "/images/celebrities/glen-powell-gallery-3.jpg"
+  ],
+  "barry-keoghan": [
+    "/images/celebrities/barry-keoghan-gallery-1.jpg",
+    "/images/celebrities/barry-keoghan-gallery-2.jpg"
+  ],
+  "paul-mescal": [
+    "/images/celebrities/paul-mescal-gallery-1.jpg",
+    "/images/celebrities/paul-mescal-gallery-2.jpg"
+  ],
+  "ayo-edebiri": [
+    "/images/celebrities/ayo-edebiri-gallery-1.jpg",
+    "/images/celebrities/ayo-edebiri-gallery-2.jpg",
+    "/images/celebrities/ayo-edebiri-gallery-3.jpg"
+  ],
+  "jeremy-allen-white": [
+    "/images/celebrities/jeremy-allen-white-gallery-1.jpg",
+    "/images/celebrities/jeremy-allen-white-gallery-2.jpg",
+    "/images/celebrities/jeremy-allen-white-gallery-3.jpg"
+  ],
+  "jenna-ortega": [
+    "/images/celebrities/jenna-ortega-gallery-1.jpg"
+  ],
+  "millie-bobby-brown": [
+    "/images/celebrities/millie-bobby-brown-gallery-1.jpg",
+    "/images/celebrities/millie-bobby-brown-gallery-2.jpg",
+    "/images/celebrities/millie-bobby-brown-gallery-3.jpg"
+  ],
+  "bella-ramsey": [
+    "/images/celebrities/bella-ramsey-gallery-1.jpg",
+    "/images/celebrities/bella-ramsey-gallery-2.jpg",
+    "/images/celebrities/bella-ramsey-gallery-3.jpg"
+  ],
+  "hunter-schafer": [
+    "/images/celebrities/hunter-schafer-gallery-1.jpg",
+    "/images/celebrities/hunter-schafer-gallery-2.jpg",
+    "/images/celebrities/hunter-schafer-gallery-3.jpg"
+  ],
+  "ben-fuller": [],
+  "riley-green": [],
+  "steve-perry": []
+}

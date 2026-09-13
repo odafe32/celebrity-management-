@@ -1,0 +1,416 @@
+// Ashencrest — Celebrity Booking Platform
+// Prisma 8 (Prisma Next) data contract
+// Database: PostgreSQL
+
+// ─── Enums ───
+
+enum EducatorStatus {
+  draft
+  published
+  archived
+}
+
+enum CategoryType {
+  talent_type
+  subject
+  level
+}
+
+enum LeadStage {
+  new
+  contacted
+  quoted
+  negotiating
+  won
+  lost
+}
+
+enum LeadEventType {
+  form_submission
+  email
+  call
+  note
+  status_change
+  whatsapp
+  chat
+}
+
+enum BookingStatus {
+  pending
+  confirmed
+  completed
+  cancelled
+  no_show
+}
+
+enum AdminRole {
+  admin
+  sales_agent
+  moderator
+}
+
+enum PaymentStatus {
+  pending
+  paid
+  failed
+  refunded
+  partially_refunded
+}
+
+enum PaymentGateway {
+  stripe
+  manual
+}
+
+enum InvoiceStatus {
+  draft
+  issued
+  paid
+  overdue
+  void
+}
+
+enum EmailStatus {
+  queued
+  sent
+  delivered
+  bounced
+  opened
+  clicked
+  failed
+  complained
+}
+
+enum ReviewStatus {
+  pending
+  approved
+  rejected
+}
+
+enum CommentStatus {
+  pending
+  approved
+  spam
+}
+
+enum PageStatus {
+  draft
+  published
+}
+
+// ─── Core: Celebrities / Educators ───
+
+model Educator {
+  id          Int             @id @default(autoincrement())
+  name        String
+  slug        String          @unique
+  profession  String
+  photoUrl    String?
+  bio         String?
+  extLink     String?
+  status      EducatorStatus  @default(draft)
+  featured    Boolean         @default(false)
+  sortOrder   Int             @default(0)
+  basePrice   Decimal?
+  currency    String          @default("USD")
+  educatorCategories EducatorCategory[]
+  reviews     Review[]
+  comments    Comment[]
+  bookings    Booking[]
+  leads       Lead[]
+  availability Availability[]
+  createdAt   TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+model Category {
+  id        Int           @id @default(autoincrement())
+  name      String
+  slug      String        @unique
+  parentId  Int?
+  parent    Category?     @relation("CategoryParent", fields: [parentId], references: [id])
+  children  Category[]    @relation("CategoryParent")
+  type      CategoryType  @default(talent_type)
+  educatorCategories EducatorCategory[]
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+model EducatorCategory {
+  id          Int      @id @default(autoincrement())
+  educatorId  Int
+  educator    Educator @relation(fields: [educatorId], references: [id])
+  categoryId  Int
+  category    Category @relation(fields: [categoryId], references: [id])
+  createdAt   TimestamptzString @default(now())
+
+  @@unique([educatorId, categoryId])
+}
+
+// ─── Services ───
+
+model ServiceType {
+  id          Int      @id @default(autoincrement())
+  name        String
+  slug        String   @unique
+  description String?
+  icon        String?
+  formConfig  Json?
+  sortOrder   Int      @default(0)
+  leads       Lead[]
+  bookings    Booking[]
+  createdAt   TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Leads & Lead Events ───
+
+model Lead {
+  id              Int           @id @default(autoincrement())
+  serviceTypeId   Int?
+  serviceType     ServiceType?  @relation(fields: [serviceTypeId], references: [id])
+  educatorId      Int?
+  educator        Educator?     @relation(fields: [educatorId], references: [id])
+  customerId      Int?
+  customer        Customer?     @relation(fields: [customerId], references: [id])
+  eventDate       String?
+  eventTime       String?
+  numPersons      Int?
+  budget          String?
+  eventLocation   String?
+  specialRequests String?
+  stage           LeadStage     @default(new)
+  assignedTo      Int?
+  assignedAdmin   AdminUser?    @relation(fields: [assignedTo], references: [id])
+  quotedAmount    Decimal?
+  wonAmount       Decimal?
+  lostReason      String?
+  events          LeadEvent[]
+  booking         Booking?
+  createdAt       TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+model LeadEvent {
+  id        Int           @id @default(autoincrement())
+  leadId    Int
+  lead      Lead          @relation(fields: [leadId], references: [id])
+  type      LeadEventType
+  body      String?
+  createdBy Int?
+  createdAt TimestamptzString @default(now())
+}
+
+// ─── Customers (no login, captured from forms) ───
+
+model Customer {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  leads     Lead[]
+  bookings  Booking[]
+  reviews   Review[]
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Admin Users (staff only) ───
+
+model AdminUser {
+  id           Int        @id @default(autoincrement())
+  name         String
+  email        String     @unique
+  passwordHash String
+  role         AdminRole  @default(admin)
+  active       Boolean    @default(true)
+  assignedLeads Lead[]
+  auditLogs    AuditLog[]
+  createdAt    TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Bookings ───
+
+model Booking {
+  id            Int           @id @default(autoincrement())
+  leadId        Int?          @unique
+  lead          Lead?         @relation(fields: [leadId], references: [id])
+  educatorId    Int
+  educator      Educator      @relation(fields: [educatorId], references: [id])
+  customerId    Int
+  customer      Customer      @relation(fields: [customerId], references: [id])
+  serviceTypeId Int
+  serviceType   ServiceType   @relation(fields: [serviceTypeId], references: [id])
+  eventDate     String
+  eventTime     String?
+  numPersons    Int           @default(1)
+  status        BookingStatus @default(pending)
+  totalAmount   Decimal?
+  payments      Payment[]
+  invoices      Invoice[]
+  createdAt     TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Payments ───
+
+model Payment {
+  id          Int            @id @default(autoincrement())
+  bookingId   Int
+  booking     Booking        @relation(fields: [bookingId], references: [id])
+  amount      Decimal
+  currency    String         @default("USD")
+  gateway     PaymentGateway @default(stripe)
+  gatewayRef  String?
+  status      PaymentStatus  @default(pending)
+  method      String?
+  createdAt   TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Invoices ───
+
+model Invoice {
+  id        Int           @id @default(autoincrement())
+  bookingId Int
+  booking   Booking       @relation(fields: [bookingId], references: [id])
+  number    String        @unique
+  amount    Decimal
+  tax       Decimal?
+  status    InvoiceStatus @default(draft)
+  pdfUrl    String?
+  issuedAt  DateTime?
+  dueAt     DateTime?
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Email System ───
+
+model EmailLog {
+  id            Int          @id @default(autoincrement())
+  toAddress     String
+  fromAddress   String
+  template      String?
+  subject       String
+  body          String?
+  leadId        Int?
+  bookingId     Int?
+  status        EmailStatus  @default(queued)
+  espMessageId  String?
+  events        EmailEvent[]
+  createdAt     TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+model EmailEvent {
+  id         Int        @id @default(autoincrement())
+  emailLogId Int
+  emailLog   EmailLog   @relation(fields: [emailLogId], references: [id])
+  eventType  String
+  payload    Json?
+  occurredAt TimestamptzString @default(now())
+}
+
+// ─── Follow-Up Automation ───
+
+model FollowUpRule {
+  id            Int      @id @default(autoincrement())
+  triggerStage  LeadStage
+  delayHours    Int
+  emailTemplate String
+  active        Boolean  @default(true)
+  createdAt     TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Reviews & Comments ───
+
+model Review {
+  id         Int          @id @default(autoincrement())
+  educatorId Int
+  educator   Educator     @relation(fields: [educatorId], references: [id])
+  customerId Int
+  customer   Customer     @relation(fields: [customerId], references: [id])
+  rating     Int
+  body       String?
+  status     ReviewStatus @default(pending)
+  createdAt  TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+model Comment {
+  id          Int           @id @default(autoincrement())
+  educatorId  Int
+  educator    Educator      @relation(fields: [educatorId], references: [id])
+  authorName  String
+  authorEmail String
+  authorWebsite String?
+  body        String
+  status      CommentStatus @default(pending)
+  parentId    Int?
+  parent      Comment?      @relation("CommentParent", fields: [parentId], references: [id])
+  children    Comment[]     @relation("CommentParent")
+  createdAt   TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── CMS Pages ───
+
+model Page {
+  id        Int        @id @default(autoincrement())
+  title     String
+  slug      String     @unique
+  body      String?
+  status    PageStatus @default(draft)
+  createdAt TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Educator Availability ───
+
+model Availability {
+  id         Int      @id @default(autoincrement())
+  educatorId Int
+  educator   Educator @relation(fields: [educatorId], references: [id])
+  date       String
+  available  Boolean  @default(true)
+  slots      Json?
+  createdAt  TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+// ─── Audit Log ───
+
+model AuditLog {
+  id        Int        @id @default(autoincrement())
+  userId    Int?
+  user      AdminUser? @relation(fields: [userId], references: [id])
+  action    String
+  entity    String
+  entityId  Int?
+  meta      Json?
+  createdAt TimestamptzString @default(now())
+}
+
+// ─── Conversations & Messages (internal staff communication) ───
+
+model Conversation {
+  id         Int       @id @default(autoincrement())
+  leadId     Int?
+  bookingId  Int?
+  messages   Message[]
+  createdAt  TimestamptzString @default(now())
+  updatedAt temporal.updatedAtString()
+}
+
+model Message {
+  id             Int          @id @default(autoincrement())
+  conversationId Int
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  senderId       Int?
+  body           String
+  readAt         DateTime?
+  createdAt      TimestamptzString @default(now())
+}

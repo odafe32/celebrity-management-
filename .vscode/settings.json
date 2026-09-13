@@ -1,0 +1,6 @@
+{
+  "prisma.validateOnSave": false,
+  "files.associations": {
+    "*.prisma": "plaintext"
+  }
+}
