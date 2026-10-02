@@ -4172,5 +4172,26 @@
     "basePrice": null,
     "currency": "USD",
     "sortOrder": 194
+  },
+  {
+    "id": "kelly-reilly",
+    "name": "Kelly Reilly",
+    "slug": "kelly-reilly",
+    "category": "actress",
+    "subCategories": [
+      "Actress"
+    ],
+    "nationality": "British",
+    "profession": "Actress",
+    "birthYear": 1977,
+    "wikiTitle": "Kelly Reilly",
+    "bio": "Jessica Kelly Siobhan Reilly is an English actress. Her television work includes starring roles in the British crime drama Above Suspicion (2009-2012), the American anthology crime drama True Detective (2015), and the historical fantasy drama Britannia (2018). From 2018 to 2024, she played Beth Dutton on the neo-Western drama series Yellowstone opposite Kevin Costner, and its spin-off Dutton Ranch (2026-present).",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kelly_Reilly",
+    "photoUrl": "/images/celebrities/kelly-reilly.jpeg",
+    "status": "published",
+    "featured": true,
+    "basePrice": null,
+    "currency": "USD",
+    "sortOrder": 195
   }
 ]
